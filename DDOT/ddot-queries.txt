@@ -1,0 +1,98 @@
+Traffic Safety 2022 completed:
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)%20AND%20(ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2021%27%20OR%20ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2022%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2021%27))%20AND%20((ProjectStatus%3D10%20OR%20ProjectStatus%3D9))%20AND%20(BudgetYear%3D2022)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+Test (same as above but without project status. Increases record count by 3):
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)%20AND%20(ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2021%27%20OR%20ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2022%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2021%27))%20AND%20(BudgetYear%3D2022)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+Test (same as above but without comments. Increases record count by 3):
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2022%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2022%27))%20AND%20(BudgetYear%3D2022)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)%20AND%20(ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2021%27%20OR%20ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2022%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2021%27))%20AND%20((ProjectStatus%3D10%20OR%20ProjectStatus%3D9))&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)%20AND%20(ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2021%27%20OR%20ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2022%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2021%27))%20AND%20((ProjectStatus%3D10%20OR%20ProjectStatus%3D9))%20AND%20(BudgetYear%3D2022)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&where=((Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)%20AND%20(ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2021%27%20OR%20ProjectIdentifier%20%3D%20%27TRAFFIC_SAFETY_2023%27%20OR%20ProjectIdentifier%20%3D%20%27PAVING_PLAN_2021%27))%20AND%20((ProjectStatus%3D10%20OR%20ProjectStatus%3D9))%20AND%20(BudgetYear%3D2023)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=200&where=(BudgetYear%3D2023)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=200&where=(BudgetYear%3D2023)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=200&where=(ProjectIdentifier%20%3D%20%27BIKE_LANE_2023%27)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=200&where=(BudgetYear%3D2023)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=100&
+    where=(
+            (Comments%20%3D%20%27Roadway%20Safety%20Improvement%20Program%27%20OR%20WorkType%20%3D%20%27COO-DRV-FEEDSGN%27%20OR%20WorkType%20%3D%20%27COO-HSIP-IMP%27%20OR%20WorkType%20%3D%20%27COO-LIVSTDY-IMP%27)
+            %20AND%20
+            (ProjectIdentifier%20%3D%20%27BIKE_LANE_2023%27)
+            )%20AND%20(
+                (ProjectStatus%3D10%20OR%20ProjectStatus%3D9)
+                )%20AND%20(BudgetYear%3D2023)&orderByFields=RouteName%20ASC&outFields=*&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+Check out the query builder here - https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/PTP/MapServer/3/query
+
+Traffic Safety Dashboard
+https://www.arcgis.com/apps/dashboards/09c7b80de6fe4e35858af711be99ffb1
+
+https://opendata.dc.gov/pages/connect-web-services
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT
+
+
+
+https://services.arcgis.com/neT9SoYxizqTHZPH/arcgis/rest/services/TSI2_SRs_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=datetimeinit%3C%3Dtimestamp%20%272023-01-23%2004%3A59%3A59%27&orderByFields=Ward_ID%20ASC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://services.arcgis.com/neT9SoYxizqTHZPH/arcgis/rest/services/TSI2_SRs_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=datetimeinit%3C%3Dtimestamp%20%272023-01-23%2004%3A59%3A59%27&orderByFields=Ward_ID%20ASC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://services.arcgis.com/neT9SoYxizqTHZPH/ArcGIS/rest/services/Traffic_Safety_Inspect_Filtered/FeatureServer/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=Rank%20IS%20NOT%20NULL&orderByFields=Ward_ID%20ASC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+https://services.arcgis.com/neT9SoYxizqTHZPH/arcgis/rest/services/TSI2_SRs_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=PRIORITY%20IS%20NOT%20NULL&orderByFields=Ward_ID%20ASC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+https://services.arcgis.com/neT9SoYxizqTHZPH/arcgis/rest/services/TSI2_SRs_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=PRIORITY%20IS%20NOT%20NULL&orderByFields=REQCOMMENTDATE%20DESC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+Old TSI:
+https://services.arcgis.com/neT9SoYxizqTHZPH/arcgis/rest/services/TSI2_SRs_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=PRIORITY%20IS%20NOT%20NULL&orderByFields=REQCOMMENTDATE%20DESC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+Old TSI:
+First record - 12/20/23
+https://services.arcgis.com/neT9SoYxizqTHZPH/ArcGIS/rest/services/Traffic_Safety_Inspect_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=PRIORITY%20IS%20NOT%20NULL&orderByFields=REQCOMMENTDATE%20DESC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+Last record - 11/5/2021
+https://services.arcgis.com/neT9SoYxizqTHZPH/ArcGIS/rest/services/Traffic_Safety_Inspect_Filtered/FeatureServer/0/query?f=json&cacheHint=true&resultOffset=0&resultRecordCount=500&where=PRIORITY%20IS%20NOT%20NULL&orderByFields=REQCOMMENTDATE%20DESC&outFields=*&resultType=standard&returnGeometry=false&spatialRel=esriSpatialRelIntersects
+
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/VisionZero/FeatureServer/1/query?f=json&orderByFields=OBJECTID&outFields=*&where=FromDate%20%3E%20timestamp%20%272017-01-02%2004:59:59%27
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/VisionZero/FeatureServer/1/query?f=json&resultOffset=0&resultRecordCount=10&orderByFields=OBJECTID&where=FromDate%20%3E%20timestamp%20%272017-01-02%2004:59:59%27
+
+
+This works for Vision Zero dashboard - 43523 records
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/VisionZero/FeatureServer/1/query?f=json&resultOffset=43522&resultRecordCount=10&orderByFields=OBJECTID&outFields=*&where=FromDate%20%3E%20timestamp%20%272017-01-02%2004:59:59%27%20
+
+
+Crime Map data:
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_APPS/CrimeMap/MapServer/layers
+
+Two base URLs:
+https://maps2.dcgis.dc.gov/dcgis/rest/services
+https://services.arcgis.com/neT9SoYxizqTHZPH/ArcGIS/rest/services
+
+Crime data:
+https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/MPD/MapServer
+
+
+Parking data:
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/VisionZero/FeatureServer/1/query?f=json&orderByFields=OBJECTID&outFields=*&where=FromDate%20%3E%20timestamp%20%272017-01-02%2004:59:59%27
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/Parking/FeatureServer/7/query?f=json&orderByFields=OBJECTID&outFields=*&where=OBJECTID%20IS%20NOT%20NULL
+
+https://maps2.dcgis.dc.gov/dcgis/rest/services/DDOT/Parking/FeatureServer/7/query?f=json&orderByFields=OBJECTID&outFields=*&where=ONSTREETTOTALPRICE%20IS%20NULL
