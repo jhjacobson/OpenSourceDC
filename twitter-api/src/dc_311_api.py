@@ -1,13 +1,33 @@
 DELIM="|"
 import requests
 from auth import API_KEY_311
+from auth import BEARER_TOKEN_311
+from config import API_KEY_SECTION
+from config import BASE_URL
+from config import REQUEST_ENDPOINT
+from config import USER_INFO
 from datetime import datetime
 
-BASE_URL='https://dc311-api.herokuapp.com/311/v4/request/'
-URL_SUFFIX='?api_key=' + API_KEY_311
+# https://dc311-api.herokuapp.com/311/v4/request/23-00012543.json?api_key=6fbc647e8ff857d5a2ef40f2a033a224cb14c2a287b28436caf4bfd0403dc0fa
+
+#service_request_id = '23-00012543'
+service_request_id='22-00589006'
+#service_request_id='22-00528382'
+url=BASE_URL + service_request_id + '/comments.json' + API_KEY_SECTION
+test=requests.get(url,headers={"Authorization":BEARER_TOKEN_311})
+
+all_srs="https://dc311-api.herokuapp.com/311/v4/requests.json?api_key=6fbc647e8ff857d5a2ef40f2a033a224cb14c2a287b28436caf4bfd0403dc0fa&page=0&page_size=50&status=Open,Closed,Canceled&my_service_request=true&user_id=005t0000008tApeAAE&contact_email=joshhjacobson@gmail.com"
+test=requests.get(all_srs,headers={"Authorization":BEARER_TOKEN_311})
+
+def get_all_srs_for_user(page,page_size):
+    page_param=f'&page={page}'
+    page_size_param=f'&page_size={page_size}'
+    status='&status=Open,Closed,Canceled'
+    url=REQUEST_ENDPOINT+API_KEY_SECTION+page_param+page_size_param+status+USER_INFO
+    return requests.get(url,headers={"Authorization":BEARER_TOKEN_311})
 
 def get_sr_from_311(service_request_id):
-    resp = requests.get(BASE_URL + service_request_id + '.json' + URL_SUFFIX)
+    resp = requests.get(BASE_URL + service_request_id + '.json' + API_KEY_SECTION)
     if resp.status_code == 404:
         return "Invalid Service Request ID"
     else:
