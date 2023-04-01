@@ -58,9 +58,9 @@ def remove_flum_area(ancs, planning_areas, flum_filtered):
 
 # Saves the result table as a CSV file
 def save_table_to_csv(result_table, output_file):
-    result_table.to_csv(output_file)
+    result_table.to_csv(f'{Constants.OUTPUT_DIRECTORY}{output_file}')
 
-def main(output_type, subtract_flum_area, output_file):
+def main(output_type = 'percentage', subtract_flum_area = False, output_file = Constants.DEFAULT_OUTPUT_FILE):
     ancs, planning_areas, flum_filtered = read_geojson_files(Constants.ANC_GEOJSON, Constants.COMP_PLAN_GEOJSON_CLEAN, Constants.FLUM_GEOJSON)
     ancs, planning_areas, flum_filtered = project_geodataframes(ancs, planning_areas, flum_filtered)
     if subtract_flum_area == True:
