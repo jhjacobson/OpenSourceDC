@@ -41,6 +41,7 @@ def create_table(merged_data, output_type='percentage'):
         result_table = result_table.round(1)
     elif output_type == 'area':
         result_table = pd.pivot_table(merged_data, values='intersection_area', index='ANC_ID', columns='PLAN_NAME', fill_value=0, aggfunc=sum)
+        result_table = result_table.round(0)
     else:
         raise ValueError("Invalid output_type. Choose either 'percentage' or 'area'.")
     return result_table
@@ -55,12 +56,11 @@ def remove_flum_area(ancs, planning_areas, flum_filtered):
     planning_areas = gpd.overlay(planning_areas, planning_areas_intersections, how='difference', keep_geom_type=Constants.KEEP_GEOM_TYPE_DEFAULT)
     return ancs, planning_areas
 
-
 # Saves the result table as a CSV file
 def save_table_to_csv(result_table, output_file):
     result_table.to_csv(output_file)
 
-def main(output_type, subtract_flum_area):
+def main(output_type, subtract_flum_area, output_file):
     ancs, planning_areas, flum_filtered = read_geojson_files(Constants.ANC_GEOJSON, Constants.COMP_PLAN_GEOJSON_CLEAN, Constants.FLUM_GEOJSON)
     ancs, planning_areas, flum_filtered = project_geodataframes(ancs, planning_areas, flum_filtered)
     if subtract_flum_area == True:
@@ -68,7 +68,7 @@ def main(output_type, subtract_flum_area):
     intersections = calculate_intersections(ancs, planning_areas)
     merged_data = calculate_area_percentages(intersections, planning_areas)
     result_table = create_table(merged_data, output_type)
-    save_table_to_csv(result_table, Constants.OUTPUT_FILE)
+    save_table_to_csv(result_table, output_file)
 
 if __name__ == "__main__":
     # Create an argument parser
@@ -79,17 +79,15 @@ if __name__ == "__main__":
                         help='Output type: "percentage" or "area". Defaults to "percentage".')
 
     # Add the subtract_flum_area argument
-    parser.add_argument('-sf', '--subtract_flum', action='store_true',
-                        help='Subtract FLUM areas (defined in config) from ANCs and Planning Areas.')
+    parser.add_argument('-sf', '--subtract_flum', action='store_false',
+                        help='Subtract FLUM areas (defined in config) from ANCs and Planning Areas. True if provided. False otherwise.')
 
-    # Parse the command-line arguments
-    args = parser.parse_args()
-
-    # Call the main function with the output_type and subtract_flum_area arguments
-    main(output_type=args.type, subtract_flum_area=args.subtract_flum)
+        # Add the output_file argument
+    parser.add_argument('-o', '--output', type=str, default=Constants.DEFAULT_OUTPUT_FILE,
+                        help='Path to the output CSV file. Defaults to the value specified in Constants.')
 
     # Parse the command-line arguments
     args = parser.parse_args()
 
     # Call the main function with the output_type argument
-    main(output_type=args.type, subtract_flum_area=args.subtract_flum)
+    main(output_type=args.type, subtract_flum_area=args.subtract_flum, output_file=args.output)
