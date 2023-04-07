@@ -1,3 +1,5 @@
+// Suggested improvement to resolutions.anc.dc.gov/Content/Mars/scripts/macs_document.js 
+// This would default the filtered set of dates to be from one month ago to today, reducing loading time by 26 seconds
 // Get the current date
 const currentDate = new Date();
 
